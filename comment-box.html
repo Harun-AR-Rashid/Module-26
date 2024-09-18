@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Please add your comment</title>
+</head>
+
+<body>
+    <div id="post-container">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione sed earum assumenda laboriosam
+            reprehenderit, numquam necessitatibus dicta, omnis quasi, eaque maiores aspernatur repudiandae cupiditate ab
+            nostrum cumque exercitationem perspiciatis quaerat voluptatibus? Necessitatibus, quidem? Deleniti earum eius
+            laboriosam praesentium facere omnis, recusandae tempora cumque nostrum qui sit dicta ab beatae minima.</p>
+        <p>Voluptas nostrum cupiditate dolore corrupti reiciendis vero eligendi repellat odio sapiente quisquam commodi
+            minus, excepturi earum adipisci molestias ipsum eveniet aliquid! Nesciunt vitae dolorum delectus hic animi
+            quos quo, necessitatibus ipsum quibusdam odio nemo deleniti cupiditate eius, voluptate eaque eveniet
+            impedit, amet illo? Consequatur quidem reiciendis ut. Sequi, aspernatur totam.</p>
+        <p>Rem laboriosam blanditiis quis commodi laborum corrupti inventore debitis ullam sed obcaecati ducimus velit
+            eligendi dolorem, provident fugiat, voluptatum minus! Nam sed, itaque quae, placeat atque quos facilis quas
+            soluta quo voluptatibus perferendis? Dolorum illo repellat voluptatibus nemo facere, dolores distinctio
+            inventore nesciunt explicabo, totam quibusdam ipsa perspiciatis porro possimus.</p>
+    </div>
+    <textarea name="" id="text-area" cols="70" rows="6"></textarea>
+    <br>
+    <button id="btn-comment">Post A Comment</button>
+
+    <script>
+        // add event listener to the post button
+        document.getElementById('btn-comment').addEventListener('click',
+            // get the comment inside the textarea
+            function () {
+                const textArea = document.getElementById('text-area');
+                const textComment = textArea.value;
+                const commentCenter = document.getElementById('post-container');
+                const paragraph = document.createElement('p');
+                paragraph.innerText = textComment;
+                commentCenter.appendChild(paragraph);
+                textArea.value = '';
+            })
+
+    </script>
+</body>
+
+</html>
