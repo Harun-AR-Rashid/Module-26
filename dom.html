@@ -10,9 +10,9 @@
 <body>
     <h1>Handle final DOM events in JavaScripts</h1>
     <h3 id="handler-title">Default Text</h3>
-    <h3>Input Text</h3>
-    <input type="text">
-    <button>Update Comment</button>
+    <h3 id="input-text">Input TextFields</h3>
+    <input id="input-field" type="text">
+    <button id="btn-update">Update Comment</button>
     <br>
     <br>
     <button onclick="handleOnClick()">Make Event Handlers In JavaScripts</button>
@@ -30,6 +30,15 @@
         document.getElementById('event-handler').addEventListener('click', function () {
             const eventHandlerChanged = document.getElementById('handler-title');
             eventHandlerChanged.innerText = 'Javascript Changed By EevntListener';
+        })
+        // inputfield 
+        const inputFieldText = document.getElementById('btn-update');
+        inputFieldText.addEventListener('click', function () {
+            const inputText = document.getElementById('input-field');
+            const inputValue = inputText.value;
+            const inputTitle = document.getElementById('input-text');
+            inputTitle.innerText = inputValue;
+            inputText.value = '';
         })
     </script>
 </body>
