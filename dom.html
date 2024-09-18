@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final DOM Handlers</title>
+</head>
+
+<body>
+    <h1>Handle final DOM events in JavaScripts</h1>
+    <h3 id="handler-title">Default Text</h3>
+    <h3>Input Text</h3>
+    <input type="text">
+    <button>Update Comment</button>
+    <br>
+    <br>
+    <button onclick="handleOnClick()">Make Event Handlers In JavaScripts</button>
+    <button id="event-handler">Handle Events By Eventlistener</button>
+
+
+
+    <script>
+
+        function handleOnClick() {
+            const handlerStatus = document.getElementById('handler-title');
+            handlerStatus.innerText = 'Handler Status Changed By javascript onclick';
+        }
+        // option-2
+        document.getElementById('event-handler').addEventListener('click', function () {
+            const eventHandlerChanged = document.getElementById('handler-title');
+            eventHandlerChanged.innerText = 'Javascript Changed By EevntListener';
+        })
+    </script>
+</body>
+
+</html>
