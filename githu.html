@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Practice Task</title>
+</head>
+
+<body>
+
+    <h1 id="github-text">GitHub Default Text</h1>
+    <input id="input-text" type="text">
+    <button id="btn-delete" disabled>Delete</button>
+
+
+    <script>
+        document.getElementById('btn-delete').addEventListener('click', function () {
+            const secret = document.getElementById('github-text');
+            secret.style.display = 'none';
+        })
+        document.getElementById('input-text').addEventListener('keyup', function (event) {
+            const eventParameter = event.target.value;
+            const setAtribute = document.getElementById('btn-delete');
+            if (eventParameter === 'delete') {
+                setAtribute.removeAttribute('disabled');
+            }
+            else {
+                setAtribute.setAttribute('disabled', true);
+            }
+        })
+    </script>
+</body>
+
+</html>
