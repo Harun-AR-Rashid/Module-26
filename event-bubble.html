@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubble Propagate</title>
+</head>
+
+<body>
+    <h1>Event bubble stop propagation</h1>
+    <section id="section-list">
+        <ul id="unorder-list">
+            <li id="item-1">Lorem.</li>
+            <li id="item-2">Totam.</li>
+            <li id="item-3">Quam!</li>
+            <li id="item-4">Autem!</li>
+            <li id="item-5">Dolores!</li>
+            <li id="item-6">Laboriosam.</li>
+        </ul>
+    </section>
+
+
+
+    <script>
+        document.getElementById('item-4').addEventListener('click', function (event) {
+            console.log('li clicked');
+            // event.stopPropagation();
+            event.stopImmediatePropagation();
+        })
+        document.getElementById('item-4').addEventListener('click', function () {
+            console.log('li 2 clicked');
+        })
+        document.getElementById('item-4').addEventListener('click', function () {
+            console.log('li 3 clicked');
+        })
+        document.getElementById('item-4').addEventListener('click', function () {
+            console.log('li 4 clicked');
+        })
+
+        document.getElementById('unorder-list').addEventListener('click', function () {
+            console.log('Ul clicked here!!!')
+        })
+        document.getElementById('section-list').addEventListener('click', function () {
+            console.log('Section clicked here!!!')
+        })
+    </script>
+</body>
+
+</html>
